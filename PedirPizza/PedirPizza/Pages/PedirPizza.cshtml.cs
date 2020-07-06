@@ -13,5 +13,19 @@ namespace PedirPizza.Pages
         {
 
         }
+
+
+        public void OnPost()
+        {
+            String Tamanio=  Request.Form["point#1"].ToString();
+            String Coberturas = Request.Form["point#2"].ToString();
+
+            List<String> CoberturasL = new List<String>();
+
+
+
+
+
+        }
     }
 }

@@ -101,7 +101,7 @@
       background-color: #0666a3;
       }
       media (min-width: 568px) {
-      th, td {
+      th, td 
       word-break: keep-all;
       }
       }
@@ -109,14 +109,9 @@
 </head>
 <body>
     <div class="testbox">
-        <form action="/">
+        <form method="post">
             <h1>Ordenar una pizza</h1>
             <p>Gracias por preferirnos a continuacion se le presentan las diferentes opciones para que pueda armar la pizza que desea.</p>
-            <h4>Name</h4>
-            <input class="first-name" type="text" name="name" placeholder="First" />
-            <input type="text" name="name" placeholder="Last" />
-            <h4>Email<span>*</span></h4>
-            <input type="text" />
             <h4>Elige el tamaño de la pizza:<span></span></h4>
             <table>
                 <tr>
@@ -128,10 +123,10 @@
                 </tr>
                 <tr>
                     <td class="first-col">Tamaño</td>
-                    <td><input type="radio" value="pequenia" name="point#1" /></td>
-                    <td><input type="radio" value="mediana" name="point#1" /></td>
-                    <td><input type="radio" value="grande" name="point#1" /></td>
-                    <td><input type="radio" value="gigante" name="point#1" /></td>
+                    <td><input id="pequenia" type="radio" value="pequenia" name="point#1" /></td>
+                    <td><input id="mediana" type="radio" value="mediana" name="point#1" /></td>
+                    <td><input id="grande" type="radio" value="grande" name="point#1" /></td>
+                    <td><input id="gigante" type="radio" value="gigante" name="point#1" /></td>
                 </tr>
             </table>
             <h4>Elige las coberturas que deseas:<span></span></h4>
@@ -139,28 +134,67 @@
                 <tr>
                     <th class="first-col"></th>
                     <th>Jamon</th>
-                    
                     <th>Peperoni</th>
                     <th>Suprema</th>
-                    
                     <th>Hongos</th>
                 </tr>
                 <tr>
-                    
-                    <td><input type="radio" value="jamon" name="point#1" /></td>
-                    
-                    <td><input type="radio" value="peperoni" name="point#3" /></td>
-                    <td><input type="radio" value="suprema" name="point#4" /></td>
-                    
-                    <td><input type="radio" value="hongos" name="point#6" /></td>
+                    <th class="first-col">Coberturas</th>
+                    <td><input type="checkbox" class="chb" value="jamon" name="point#2" /></td>
+                    <td><input type="checkbox" class="chb" value="peperoni" name="point#2" /></td>
+                    <td><input type="checkbox" class="chb" value="suprema" name="point#2" /></td>
+                    <td><input type="checkbox" class="chb" value="hongos" name="point#2" /></td>
                 </tr>
-                
+
             </table>
 
             <div class="btn-block">
-                <button type="submit" href="/">Continuar</button>
+                <button id="btn" type="submit" href="/">Continuar</button>
             </div>
         </form>
     </div>
+    <input type="text" id="opcionTamanio" name="ValorT" hidden />
+    <input type="text" id="opcionesCoberturas" name="ValorC" hidden />
+    @section Scripts{
+        <script>
+
+            btn.onclick = function () {
+                const rbs = document.querySelectorAll('input[name="point#2"]');
+
+                let selectedValue = "";
+                for (const rb of rbs) {
+
+                    if (rb.checked) {
+                        selectedValue += rb.value + ",";
+
+                    }
+                }
+                alert(selectedValue);
+            };
+
+
+
+
+
+
+
+
+                    //function isCheck() {
+                    //    var chb = document.getElementsByClassName('chb');
+
+                    //    if (chb[0].checked) {
+                    //        document.getElementById
+                    //    }
+                    //}
+        </script>
+
+    }
+
+
+
+
+
+
+
 </body>
 </html>
