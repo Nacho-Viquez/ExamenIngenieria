@@ -14,9 +14,13 @@ namespace PedirPizza.Pages
 
         PedirPizzaController PedirController;
 
+        public String MensajeTamanio { get; set; }
+
+        public String MensajeCoberturas { get; set; }
+
         public void OnPost()
         {
-            String Tamanio = Request.Form["point#1"].ToString();
+            String Tamanio = Request.Form["tamanio"].ToString();
             String Coberturas = Request.Form["point#2"].ToString();
 
             List<String> CoberturasL = new List<String>();
@@ -25,9 +29,17 @@ namespace PedirPizza.Pages
 
             PedirController = new PedirPizzaController();
 
-            Pizza PizzaOrdenada = new Pizza(Tamanio, CoberturasL);
+            MensajeTamanio = PedirController.ComunicarRevisionTamanio(Tamanio);
 
-            PedirController.ComunicarPizza(PizzaOrdenada);
+            
+
+            if (MensajeTamanio == "" )
+            {
+                Pizza PizzaOrdenada = new Pizza(Tamanio, CoberturasL);
+
+                PedirController.ComunicarPizza(PizzaOrdenada);
+            }
+
 
         }
     }

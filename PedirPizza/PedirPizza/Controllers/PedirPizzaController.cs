@@ -11,6 +11,15 @@ namespace PedirPizza.Controllers
     {
         PedirPizzaModel PedirModel = new PedirPizzaModel();
 
+        public String ComunicarRevisionTamanio(String Tamanio)
+        {
+            String Mensaje ;
+            return Mensaje = Mensaje = PedirModel.RevisarTamanioPizza(Tamanio);
+
+        }
+
+
+
         public double ComunicarPizza(Pizza PizzaOrdenada)
         {
             double Precio = 0.0;

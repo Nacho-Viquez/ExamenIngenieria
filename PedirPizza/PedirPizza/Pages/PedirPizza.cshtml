@@ -112,7 +112,7 @@
         <form method="post">
             <h1>Ordenar una pizza</h1>
             <p>Gracias por preferirnos a continuacion se le presentan las diferentes opciones para que pueda armar la pizza que desea.</p>
-            <h4>Elige el tamaño de la pizza:<span></span></h4>
+            <h4>Elige el tamaño de la pizza:<span>*</span></h4>
             <table>
                 <tr>
                     <th class="first-col"></th>
@@ -123,13 +123,14 @@
                 </tr>
                 <tr>
                     <td class="first-col">Tamaño</td>
-                    <td><input id="pequenia" type="radio" value="pequenia" name="point#1" /></td>
-                    <td><input id="mediana" type="radio" value="mediana" name="point#1" /></td>
-                    <td><input id="grande" type="radio" value="grande" name="point#1" /></td>
-                    <td><input id="gigante" type="radio" value="gigante" name="point#1" /></td>
+                    <td><input id="pequenia" type="radio" value="pequenia" name="tamanio" /></td>
+                    <td><input id="mediana" type="radio" value="mediana" name="tamanio" /></td>
+                    <td><input id="grande" type="radio" value="grande" name="tamanio" /></td>
+                    <td><input id="gigante" type="radio" value="gigante" name="tamanio" /></td>
                 </tr>
             </table>
-            <h4>Elige las coberturas que deseas:<span></span></h4>
+            <h5 style="color:red">@Model.MensajeTamanio</h5>
+            <h4>Elige las coberturas que deseas:<span>*</span></h4>
             <table>
                 <tr>
                     <th class="first-col"></th>
@@ -147,7 +148,7 @@
                 </tr>
 
             </table>
-
+            
             <div class="btn-block">
                 <button id="btn" type="submit" href="/">Continuar</button>
             </div>

@@ -9,6 +9,21 @@ namespace PedirPizza.Models
     public class PedirPizzaModel
     {
 
+
+        public String RevisarTamanioPizza(String Tamanio)
+        {
+            String Mensaje = "";
+            if (Tamanio == "")
+            {
+                Mensaje = "Por favor seleccionar un tamaño para la pizza.";
+            }
+
+            return Mensaje;
+        }
+
+
+
+
         public double CalcularPrecio(Pizza PizzaOrdenada)
         {
             //Datos quemados para pruebas
