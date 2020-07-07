@@ -13,11 +13,46 @@ namespace PedirPizza.Models
         {
             //Datos quemados para pruebas
 
-
+            double Envio = 1600;
             double PrecioFinal = 0.0;
+            double PrecioTamanio = CalcularPrecioTamanio(PizzaOrdenada);
             double PrecioCoberturas =CalcularPrecioCoberturas(PizzaOrdenada);
+            PrecioFinal = PrecioTamanio + PrecioCoberturas;
+            PrecioFinal += CalcularImpuesto(PrecioFinal);
+            PrecioFinal += Envio;
 
             return PrecioFinal;
+        }
+
+
+        public double CalcularImpuesto(double Precio)
+        {
+            double Impuesto;
+
+            return Impuesto = Precio *0.13;
+        }
+
+
+        public double CalcularPrecioTamanio(Pizza PizzaOrden)
+        {
+            double Precio = 0.0;
+            switch (PizzaOrden.Tamanio)
+            {
+                case "pequenia":
+                    Precio = 6000;
+                    break;
+                case "mediana":
+                    Precio = 9000;
+                    break;
+                case "grande":
+                    Precio = 10000;
+                    break;
+                case "gigante":
+                    Precio = 12000;
+                    break;
+            }
+
+            return Precio;
         }
 
         public double CalcularPrecioCoberturas(Pizza pizza)

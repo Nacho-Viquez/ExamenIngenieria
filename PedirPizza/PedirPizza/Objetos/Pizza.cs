@@ -12,7 +12,7 @@ namespace PedirPizza.Objetos
 
         public List<String> Coberturas { get; set; }
 
-        String Tamanio { get; set; }
+        public String Tamanio { get; set; }
 
         public Pizza(String Tamanio, List<String> Coberturas)
         {
