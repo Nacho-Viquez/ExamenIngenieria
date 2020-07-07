@@ -10,7 +10,7 @@ namespace PruebasPedirPizza
     public class PruebasModel
     {
         [TestMethod]
-        public void CalcularPrecioCoberturas_Debe_retornar_9240_si_selecciona_todo_Tamanio_grande()
+        public void CalcularPrecioCoberturas_Debe_retornar_9240_si_selecciona_todo()
         {
             //Preparacion
             List<String> Coberturas = new List<String>();
@@ -26,7 +26,69 @@ namespace PruebasPedirPizza
             //Assert
             Assert.AreEqual(PrecioCobertura, 9240.0);
         }
-        //Hacer mas pruebas solo seleccionando cada valor 
+
+        [TestMethod]
+        public void CalcularPrecioCoberturas_Debe_retornar_1500_si_selecciona_hongos()
+        {
+            //Preparacion
+            List<String> Coberturas = new List<String>();
+            Coberturas.Add("hongos");
+
+
+            Pizza PizzaPrueba = new Pizza("Grande", Coberturas);
+            PedirPizzaModel Prueba = new PedirPizzaModel();
+            double PrecioCobertura = Prueba.CalcularPrecioCoberturas(PizzaPrueba);
+
+            //Assert
+            Assert.AreEqual(PrecioCobertura, 1500.0);
+        }
+
+        [TestMethod]
+        public void CalcularPrecioCoberturas_Debe_retornar_1700_si_selecciona_jamon()
+        {
+            //Preparacion
+            List<String> Coberturas = new List<String>();
+            Coberturas.Add("jamon");
+
+
+            Pizza PizzaPrueba = new Pizza("Grande", Coberturas);
+            PedirPizzaModel Prueba = new PedirPizzaModel();
+            double PrecioCobertura = Prueba.CalcularPrecioCoberturas(PizzaPrueba);
+
+            //Assert
+            Assert.AreEqual(PrecioCobertura, 1700.0);
+        }
+        [TestMethod]
+        public void CalcularPrecioCoberturas_Debe_retornar_2500_si_selecciona_peperoni()
+        {
+            //Preparacion
+            List<String> Coberturas = new List<String>();
+            Coberturas.Add("peperoni");
+
+
+            Pizza PizzaPrueba = new Pizza("Grande", Coberturas);
+            PedirPizzaModel Prueba = new PedirPizzaModel();
+            double PrecioCobertura = Prueba.CalcularPrecioCoberturas(PizzaPrueba);
+
+            //Assert
+            Assert.AreEqual(PrecioCobertura, 2500.0);
+        }
+
+        [TestMethod]
+        public void CalcularPrecioCoberturas_Debe_retornar_3540_si_selecciona_suprema()
+        {
+            //Preparacion
+            List<String> Coberturas = new List<String>();
+            Coberturas.Add("suprema");
+
+
+            Pizza PizzaPrueba = new Pizza("Grande", Coberturas);
+            PedirPizzaModel Prueba = new PedirPizzaModel();
+            double PrecioCobertura = Prueba.CalcularPrecioCoberturas(PizzaPrueba);
+
+            //Assert
+            Assert.AreEqual(PrecioCobertura, 3540.0);
+        }
 
         [TestMethod]
         public void CalcularPrecioTamanio_Debe_retornar_6000_si_Tamanio_pequenia()
