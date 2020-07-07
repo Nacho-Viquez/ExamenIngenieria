@@ -18,7 +18,11 @@ namespace PedirPizza.Controllers
 
         }
 
-
+        public String ComunicarRevisionCoberturas(List<String> Coberturas)
+        {
+            String Mensaje;
+            return Mensaje = PedirModel.RevisarSeleccionesCoberturas(Coberturas);
+        }
 
         public double ComunicarPizza(Pizza PizzaOrdenada)
         {

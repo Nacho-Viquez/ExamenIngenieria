@@ -30,10 +30,10 @@ namespace PedirPizza.Pages
             PedirController = new PedirPizzaController();
 
             MensajeTamanio = PedirController.ComunicarRevisionTamanio(Tamanio);
+            MensajeCoberturas = PedirController.ComunicarRevisionCoberturas(CoberturasL);
 
-            
 
-            if (MensajeTamanio == "" )
+            if (MensajeTamanio == "" || MensajeCoberturas == "")
             {
                 Pizza PizzaOrdenada = new Pizza(Tamanio, CoberturasL);
 
