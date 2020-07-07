@@ -24,7 +24,7 @@ namespace PedirPizza.Models
         public String RevisarSeleccionesCoberturas(List<String> Coberturas)
         {
             String Mensaje = "";
-            if (Coberturas[0] == "")
+            if (Coberturas[0] == "" )
             {
                 Mensaje = "Por favor seleccione alguna cobertura para la pizza.";
             }
@@ -34,7 +34,7 @@ namespace PedirPizza.Models
 
         public double CalcularPrecio(Pizza PizzaOrdenada)
         {
-            //Datos quemados para pruebas
+            
 
             double Envio = 1600;
             double PrecioFinal = 0.0;
