@@ -9,9 +9,24 @@ namespace PedirPizza.Pages
 {
     public class IndexModel : PageModel
     {
+
+        [TempData]
+        public String MensajeConfirmacion { get; set; }
+
+        public String Mensaje = "";
+
         public void OnGet()
         {
+            if (MensajeConfirmacion != null)
+            {
+                Mensaje = MensajeConfirmacion;
+            }
+        }
 
+
+        public void OnPost()
+        {
+            Response.Redirect("PedirPizza");
         }
     }
 }

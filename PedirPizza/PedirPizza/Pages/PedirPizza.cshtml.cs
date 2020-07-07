@@ -18,28 +18,52 @@ namespace PedirPizza.Pages
 
         public String MensajeCoberturas { get; set; }
 
+
+       
+        public string Precio = "";
+        [TempData]
+        public string PrecioPagar { get; set; }
+
+        public String Localizacion { get; set; }
+
+        public List<String> Selecciones { get; set; }
+
+        public String Tamanio { get; set; }
+
+        [TempData]
+        public string ValorPagar { get; set; }
+
         public void OnPost()
         {
-            String Tamanio = Request.Form["tamanio"].ToString();
-            String Coberturas = Request.Form["point#2"].ToString();
 
+            String TamanioTemp = Request.Form["tamanio"].ToString();
+            String CoberturasTemp = Request.Form["point#2"].ToString();
+            //String localizacionEnvio = Request.Form["localizacion"].ToString();
             List<String> CoberturasL = new List<String>();
 
-            CoberturasL = Coberturas.Split(',').ToList();
-
+            CoberturasL = CoberturasTemp.Split(',').ToList();
             PedirController = new PedirPizzaController();
 
-            MensajeTamanio = PedirController.ComunicarRevisionTamanio(Tamanio);
+
+            MensajeTamanio = PedirController.ComunicarRevisionTamanio(TamanioTemp);
             MensajeCoberturas = PedirController.ComunicarRevisionCoberturas(CoberturasL);
 
 
-            if (MensajeTamanio == "" || MensajeCoberturas == "")
+            if ((MensajeTamanio == "") && (MensajeCoberturas == ""))
             {
-                Pizza PizzaOrdenada = new Pizza(Tamanio, CoberturasL);
+                //Retorno del precio
+                Pizza PizzaOrdenada = new Pizza(TamanioTemp, CoberturasL);
 
-                PedirController.ComunicarPizza(PizzaOrdenada);
+                double PrecioPizza= PedirController.ComunicarPizza(PizzaOrdenada);
+                PrecioPagar =  PrecioPizza.ToString();
+                string Location = "ConfirmarPedido?value1=";
+
+                Response.Redirect(Location + Precio);
+                
             }
 
+
+            
 
         }
     }

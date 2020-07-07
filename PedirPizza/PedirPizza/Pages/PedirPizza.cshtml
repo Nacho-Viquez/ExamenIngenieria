@@ -128,7 +128,12 @@
                     <td><input id="grande" type="radio" value="grande" name="tamanio" /></td>
                     <td><input id="gigante" type="radio" value="gigante" name="tamanio" /></td>
                 </tr>
+
             </table>
+            
+
+
+
             <h5 style="color:red">@Model.MensajeTamanio</h5>
             <h4>Elige las coberturas que deseas:<span>*</span></h4>
             <table>
@@ -149,15 +154,57 @@
 
             </table>
             <h5 style="color:red">@Model.MensajeCoberturas</h5>
-            <div class="btn-block">
-                <button id="btn" type="submit" href="/">Continuar</button>
+            
+                
+            
+            <div >
+                @if (@Model.Precio == "")
+                {
+                    <button id="btn" type="submit" href="/" class="btn-block">Continuar</button>
+
+                }
+                @*else
+                {
+                    <h4 id="precio" style="color:green" name="TempPrecio">@Model.Precio </h4>
+
+                    <h5>Ingrese la localizacion a la cual se quiere entregar:</h5>
+                    <input id="localizacionEnvio"  type ="text" name="localizacion" />
+                    <small>*Esta información solo sera usada con fines de la entrega.</small>
+                    <br />
+
+                    <button style="background-color:forestgreen" id="confimarBtn" class="btn1" disabled>Confirmar</button>
+
+
+                    <button style="background-color:red" class="btn2" >Cancelar</button>
+                }*@
+
+
+
             </div>
+
         </form>
+
     </div>
     <input type="text" id="opcionTamanio" name="ValorT" hidden />
     <input type="text" id="opcionesCoberturas" name="ValorC" hidden />
+
+  
+    
+
     @section Scripts{
         <script>
+
+            $("#localizacionEnvio").on("keyup", function () {
+                var Valor = $("#localizacionEnvio").val()
+                console.log(Valor)
+                if (Valor != "") {
+                    $("#confimarBtn").removeAttr('disabled')
+                } else {
+                    $("#confimarBtn").attr('disabled','disabled')
+                }
+
+            }
+            )
 
             btn.onclick = function () {
                 const rbs = document.querySelectorAll('input[name="point#2"]');
@@ -170,23 +217,15 @@
 
                     }
                 }
-                
+               
             };
 
 
+            
 
 
 
 
-
-
-                    //function isCheck() {
-                    //    var chb = document.getElementsByClassName('chb');
-
-                    //    if (chb[0].checked) {
-                    //        document.getElementById
-                    //    }
-                    //}
         </script>
 
     }
