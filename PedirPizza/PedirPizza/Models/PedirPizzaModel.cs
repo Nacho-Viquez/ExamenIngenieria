@@ -6,20 +6,16 @@ using PedirPizza.Objetos;
 
 namespace PedirPizza.Models
 {
-    public class PedirPizzaController
+    public class PedirPizzaModel
     {
 
-        public double CalcularPrecio()
+        public double CalcularPrecio(Pizza PizzaOrdenada)
         {
             //Datos quemados para pruebas
-            String Tamanio = "mediana";
-            List<String> Coberturas = new List<String>();
-            Coberturas.Add("Hongos");
-            Coberturas.Add("Peperoni");
-            Pizza Prueba = new Pizza(Tamanio,Coberturas);
+
 
             double PrecioFinal = 0.0;
-             double PrecioCoberturas =CalcularPrecioCoberturas(Prueba);
+            double PrecioCoberturas =CalcularPrecioCoberturas(PizzaOrdenada);
 
             return PrecioFinal;
         }
@@ -31,16 +27,16 @@ namespace PedirPizza.Models
             {
                 switch (cobertura)
                 {
-                    case "Hongos":
+                    case "hongos":
                         PrecioCoberturas += 1500.0;
                         break;
-                    case "Jamon":
+                    case "jamon":
                         PrecioCoberturas += 1700.0;
                         break;
-                    case "Peperoni":
+                    case "peperoni":
                         PrecioCoberturas += 2500.0;
                         break;
-                    case "Suprema":
+                    case "suprema":
                         PrecioCoberturas += 3540.0;
                         break;
 
