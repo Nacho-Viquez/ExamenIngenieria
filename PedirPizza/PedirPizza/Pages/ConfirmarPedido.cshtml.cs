@@ -10,7 +10,7 @@ namespace PedirPizza.Pages
     public class ConfirmarPedidoModel : PageModel
     {
 
-
+        public String Informacion { get; set; }
 
         [TempData]
         public String MensajeConfirmacion { get; set; }
@@ -18,8 +18,10 @@ namespace PedirPizza.Pages
         [TempData]
         public string PrecioPagar { get; set; }
 
-      
-
+        public void OnGet()
+        {
+            Informacion = "El monto a pagar es:" + PrecioPagar ;
+        }
 
         public void OnPost()
         {

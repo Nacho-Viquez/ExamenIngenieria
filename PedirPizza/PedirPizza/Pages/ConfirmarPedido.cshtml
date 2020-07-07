@@ -110,23 +110,17 @@
     <div class="testbox">
         <form method="post">
 
-            <h3>El monto a pagar es:</h3>
-            <h3>@Model.PrecioPagar</h3>
+            <h3>@Model.Informacion</h3>
             <h4>Indique la localizacion a donde se realizará la entrega:</h4>
             <input type="text" id="localizacionEnvio" name="localizacionEnvio" />
             <small>* The information given within the Feedback Form will be used for service improvement only and are strictly confidential.</small>
             <div class="btn-block">
-                <button id="confimarBtn"href="/" type="submit" disabled>Confirmar</button>
+                <button id="confimarBtn" href="/" type="submit" disabled>Confirmar</button>
+                <button  type="submit" href="Index">Cancelar</button>
 
             </div>
-
-
-
         </form>
-        <div>
-            <button type="submit" href="/">Cancelar</button>
 
-        </div>
     </div>
 </body>
 </html>

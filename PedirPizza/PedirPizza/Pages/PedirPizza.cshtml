@@ -132,8 +132,6 @@
             </table>
             
 
-
-
             <h5 style="color:red">@Model.MensajeTamanio</h5>
             <h4>Elige las coberturas que deseas:<span>*</span></h4>
             <table>
@@ -154,32 +152,9 @@
 
             </table>
             <h5 style="color:red">@Model.MensajeCoberturas</h5>
-            
-                
-            
-            <div >
-                @if (@Model.Precio == "")
-                {
-                    <button id="btn" type="submit" href="/" class="btn-block">Continuar</button>
 
-                }
-                @*else
-                {
-                    <h4 id="precio" style="color:green" name="TempPrecio">@Model.Precio </h4>
-
-                    <h5>Ingrese la localizacion a la cual se quiere entregar:</h5>
-                    <input id="localizacionEnvio"  type ="text" name="localizacion" />
-                    <small>*Esta información solo sera usada con fines de la entrega.</small>
-                    <br />
-
-                    <button style="background-color:forestgreen" id="confimarBtn" class="btn1" disabled>Confirmar</button>
-
-
-                    <button style="background-color:red" class="btn2" >Cancelar</button>
-                }*@
-
-
-
+            <div class="btn-block">
+                <button id="btn" type="submit" href="/">Continuar</button>
             </div>
 
         </form>
@@ -229,10 +204,6 @@
         </script>
 
     }
-
-
-
-
 
 
 

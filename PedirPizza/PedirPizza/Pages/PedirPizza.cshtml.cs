@@ -18,8 +18,6 @@ namespace PedirPizza.Pages
 
         public String MensajeCoberturas { get; set; }
 
-
-       
         public string Precio = "";
         [TempData]
         public string PrecioPagar { get; set; }
@@ -38,7 +36,7 @@ namespace PedirPizza.Pages
 
             String TamanioTemp = Request.Form["tamanio"].ToString();
             String CoberturasTemp = Request.Form["point#2"].ToString();
-            //String localizacionEnvio = Request.Form["localizacion"].ToString();
+            
             List<String> CoberturasL = new List<String>();
 
             CoberturasL = CoberturasTemp.Split(',').ToList();
@@ -56,9 +54,9 @@ namespace PedirPizza.Pages
 
                 double PrecioPizza= PedirController.ComunicarPizza(PizzaOrdenada);
                 PrecioPagar =  PrecioPizza.ToString();
-                string Location = "ConfirmarPedido?value1=";
+                
 
-                Response.Redirect(Location + Precio);
+                Response.Redirect("ConfirmarPedido ");
                 
             }
 
