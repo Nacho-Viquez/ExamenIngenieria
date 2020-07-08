@@ -10,43 +10,39 @@
 <head>
     <title>Online Feedback Form</title>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600' rel='stylesheet' type='text/css'>
-
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600' rel='stylesheet' type='text/css'>
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Bree Serif' rel='stylesheet'>
     <style>
         html, body {
             min-height: 100%;
-            background-image: url("http://www.gannett-cdn.com/-mm-/d0eaf24812ce3395836c282d1b245d4d7c6b00c0/c=0-7-1650-937&r=x1803&c=3200x1800/local/-/media/USATODAY/USATODAY/2014/09/17/1410986297000-XXX-Pizza-Hut-Skinny-Slice-pizza.JPG");
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            background-size: cover;
         }
 
         body, div, form, input, p {
             padding: 0;
             margin: 0;
             outline: none;
-            color: #FEFDFC;
             font-family: 'Bree Serif';
-            font-size: 80px;
             font-size: 14px;
             color: #666;
             line-height: 22px;
         }
 
         h1 {
+            font-family: 'Bree Serif';
             font-weight: 400;
+            font-size: 80px;
+            color: #FEFDFC
+        }
+
+        h2 {
+            color: #FEFDFC;
+            font-family: 'Bree Serif';
+            font-size: 80px;
         }
 
         h4 {
             margin: 22px 0 4px;
             color: #095484;
-        }
-
-        h3 {
-            color: #FEFDFC;
-            font-family: 'Bree Serif';
-            font-size: 80px;
         }
 
         .testbox {
@@ -86,6 +82,7 @@
         }
 
         th, td {
+            color:black;
             width: 21%;
             padding: 15px 0;
             border-bottom: 1px solid #ccc;
@@ -125,24 +122,35 @@
             font-size: 16px;
             color: #fff;
             cursor: pointer;
+            font-family: 'Bree Serif';
         }
 
-        button:hover {
-            background-color: #0666a3;
-        }
+            button:hover {
+                background-color: #0666a3;
+            }
 
         media (min-width: 568px) {
-            th, td word-break: keep-all;
+            th, td
+
+        {
+            word-break: keep-all;
         }
 
-        
+        }
 
+        body {
+            background-image: url("http://www.gannett-cdn.com/-mm-/d0eaf24812ce3395836c282d1b245d4d7c6b00c0/c=0-7-1650-937&r=x1803&c=3200x1800/local/-/media/USATODAY/USATODAY/2014/09/17/1410986297000-XXX-Pizza-Hut-Skinny-Slice-pizza.JPG");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
 
         form {
             background-color: #A1A1A1
         }
     </style>
 </head>
+
 <body id="cuerpo">
     <div class="testbox">
         <form method="post">
@@ -168,7 +176,7 @@
             </table>
             
 
-            <h5 style="color:red">@Model.MensajeTamanio</h5>
+            <h5 style="color:#e60000">@Model.MensajeTamanio</h5>
             <h4>Elige las coberturas que deseas:<span>*</span></h4>
             <table>
                 <tr>
@@ -187,7 +195,7 @@
                 </tr>
 
             </table>
-            <h5 style="color:red">@Model.MensajeCoberturas</h5>
+            <h5 style="color:#e60000">@Model.MensajeCoberturas</h5>
 
             <div class="btn-block">
                 <button id="btn" type="submit" href="/">Continuar</button>
