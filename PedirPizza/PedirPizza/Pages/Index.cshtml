@@ -9,6 +9,7 @@
     <title>Online Feedback Form</title>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600' rel='stylesheet' type='text/css'>
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Bree Serif' rel='stylesheet'>
     <style>
         html, body {
             min-height: 100%;
@@ -26,6 +27,12 @@
 
         h1 {
             font-weight: 400;
+        }
+
+        h2 {
+            color: #FEFDFC;
+            font-family: 'Bree Serif';
+            font-size: 80px;
         }
 
         h4 {
@@ -109,6 +116,8 @@
             font-size: 16px;
             color: #fff;
             cursor: pointer;
+            font-family: 'Bree Serif';
+            
         }
 
             button:hover {
@@ -121,16 +130,31 @@
         {
             word-break: keep-all;
         }
+
+        }
+
+        body {
+            background-image: url("http://www.gannett-cdn.com/-mm-/d0eaf24812ce3395836c282d1b245d4d7c6b00c0/c=0-7-1650-937&r=x1803&c=3200x1800/local/-/media/USATODAY/USATODAY/2014/09/17/1410986297000-XXX-Pizza-Hut-Skinny-Slice-pizza.JPG");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+
+        form {
+            background-color: #A1A1A1
         }
     </style>
 </head>
 <body>
-    <div class="testbox">
-        <form method="post">
+    <div class="testbox" id="inicio">
+        <form method="post" id="pedirPizza">
             <h2>Bienvenido a la pizzeria</h2>
-            <div>
+            
+            <div >
 
                 <button style="background-color:forestgreen" type="submit" href="/">Pedir Pizza</button>
+                <br />
+                <br />
                 <h4 style="color:forestgreen">@Model.Mensaje</h4>
 
             </div>
