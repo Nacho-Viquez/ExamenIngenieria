@@ -30,7 +30,7 @@ namespace PedirPizza.Pages
 
             if (Entrega != "")
             {
-                MensajeConfirmacion = "Se ha completado la orden, en unos momentos recibira su orden en la dirección: " + Entrega;
+                MensajeConfirmacion = "Se ha completado la orden, en unos momentos recibirá su orden en la dirección: " + Entrega;
             }
             else
             {
